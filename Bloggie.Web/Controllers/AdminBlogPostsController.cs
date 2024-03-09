@@ -83,6 +83,15 @@ namespace Bloggie.Web.Controllers
 
         }
 
+        // show all blog post 
+        [HttpGet]
+        public async Task<IActionResult> List ()
+        {
+
+            var blogpost=await blogPostRepository.GetAllAsync();
+            return View(blogpost);
+        }
+
 
 
     }
