@@ -187,13 +187,31 @@ namespace Bloggie.Web.Controllers
              // show failure notification
             return RedirectToAction("Edit");
 
-
            
 
+        }
 
 
+        public async Task<IActionResult>Delete(EditBlogPostRequest editBlogPostRequest)
+        {
+            // Talk to the repository to delete the blogpost and tags
+
+            var deletedBlogPost=await blogPostRepository.DeleteAsync(editBlogPostRequest.Id);
+
+            if (deletedBlogPost != null) 
+            {
+                //show success notification
+                return RedirectToAction("List");
+            }
+
+            //show error notification
+
+            return RedirectToAction("Edit", new { id = editBlogPostRequest.Id });
+
+            //display the response
 
         }
+
 
 
 
