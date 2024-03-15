@@ -48,6 +48,13 @@
             <input type="text" class="form-control" id="shortDescription" asp-for="ShortDescription" />
         </div>
 
+            <div class="mb-3">
+                <label class="form-label">Featured Image Upload</label>
+                <input type="file" id="featuredImageUpload" class="form-control" />
+                <img src="@Model.FeautredImageUrl" id="featuredImageDisplay" style="display:none;width: 300px;" />
+
+            </div>
+
         <div class="mb-3">
             <label class="form-label">Feautred Image URL</label>
             <input type="text" class="form-control" id="feautredImageUrl" asp-for="FeautredImageUrl" />
