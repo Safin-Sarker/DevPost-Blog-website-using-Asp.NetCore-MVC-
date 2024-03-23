@@ -104,7 +104,9 @@
 @section Scripts
 {
     <script>
-        var editor=new FroalaEditor('#content');
+        var editor=new FroalaEditor('#content',{
+            imageUploadUrl:'/api/images'
+        });
 
         const featureUploadElement =document.getElementById('featuredImageUpload');
         const featuredImageUrlElement = document.getElementById('feautredImageUrl');
