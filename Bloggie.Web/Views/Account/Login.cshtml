@@ -19,12 +19,15 @@
 
 				<label class="col-form-label">Password</label>
       			<input type="password" id="password" class="form-control" asp-for="Password" />
+
 			</div>
 
 
 			<div class="mb-3">
-				<button type="submit" class="btn btn-dark">Register</button>
+				<button type="submit" class="btn btn-dark">Login</button>
 			</div>
+
+			<input type="hidden" asp-for="ReturnUrl"/>
 		</form>
 
 
