@@ -67,7 +67,7 @@
 						<h5>Comments</h5>
 						@if (signInManager.IsSignedIn(User))
 						{
-							<form method="post">
+							<form method="post" action="/blogs/@Model.UrlHandle">
 								<div class="mb-3">
 									<label class="form-label">Comment Description</label>
 									<input type="text" class="form-control" asp-for="CommentDescription" />

@@ -80,9 +80,9 @@ namespace Bloggie.Web.Controllers
         }
 
 
-        [HttpPost]
+		[HttpPost("blogs/{urlHandle}")]
 
-        public async Task<IActionResult> Index(BlogDetailsView blogDetailsView)
+		public async Task<IActionResult> Index(BlogDetailsView blogDetailsView)
         {
 
             if (signInManager.IsSignedIn(User))
