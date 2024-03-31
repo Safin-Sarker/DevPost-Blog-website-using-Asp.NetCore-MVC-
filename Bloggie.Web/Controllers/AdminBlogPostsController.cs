@@ -153,7 +153,8 @@ namespace Bloggie.Web.Controllers
                 FeautredImageUrl = editBlogPostRequest.FeautredImageUrl,
                 UrlHandle = editBlogPostRequest.UrlHandle,
                 Visible = editBlogPostRequest.Visible,
-            };
+				PublishedDate = editBlogPostRequest.PublishedDate,
+			};
 
             // Map Tags into domain model
 
