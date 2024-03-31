@@ -88,6 +88,32 @@
 
 					<div class="card-body">
 
+						@if (Model.Comment != null && Model.Comment.Any())
+						{
+							@foreach(var comment in Model.Comment)
+							{
+								<div class="card mb-3">
+									<div class="card-body">
+
+										<div>
+											@comment.Description
+										</div>
+
+										<div class="d-flex justify-content-between">
+											<span class="text-secondary">@comment.UserName</span>
+											<span class="text-secondary">@comment.AddDate.ToShortDateString()</span>
+										</div>
+
+
+									</div>
+
+								</div>
+								
+							}
+
+							
+						}
+
 					</div>
 
 				</div>

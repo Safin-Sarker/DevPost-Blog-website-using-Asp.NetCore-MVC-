@@ -29,5 +29,7 @@ namespace Bloggie.Web.Models.Domain
 		public ICollection<BlogPostLike> BlogPostLikes { get; set; }
 
 		public ICollection<BlogPostComment> BlogPostComments { get; set; }
+
+
 	}
 }

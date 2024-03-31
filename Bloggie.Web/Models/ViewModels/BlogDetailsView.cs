@@ -33,6 +33,8 @@ namespace Bloggie.Web.Models.ViewModels
 
 		public string CommentDescription { get; set; }
 
+		public IEnumerable<BlogCommentView> Comment { get; set; }
+
 	
     }
 }
