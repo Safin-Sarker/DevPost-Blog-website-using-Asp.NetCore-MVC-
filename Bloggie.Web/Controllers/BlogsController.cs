@@ -124,7 +124,7 @@ namespace Bloggie.Web.Controllers
 
 				await blogPostCommentRepository.AddAsync(model);
 
-                return RedirectToAction("Index", "Home", new {urlHandle=blogDetailsView.UrlHandle});
+                return RedirectToAction("Index", "Blogs", new {urlHandle=blogDetailsView.UrlHandle});
 
 			}
 
