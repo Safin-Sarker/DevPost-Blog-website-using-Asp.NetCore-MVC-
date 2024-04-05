@@ -15,7 +15,7 @@ namespace Bloggie.Web.Repositories
 
 
 
-        public async Task<IEnumerable<IdentityUser>> GetAllAsync()
+        public async Task<IEnumerable<IdentityUser>> GetAll()
 		{
 			var users=await authDbContext.Users.ToListAsync();
 
