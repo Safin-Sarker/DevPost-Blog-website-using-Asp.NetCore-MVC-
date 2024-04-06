@@ -14,11 +14,17 @@
 		</h1>
 		<form method="post">
 			<div class="mb-3">
-				<label class="col-form-label">UserName</label>
-				<input type="text" id="username" class="form-control" asp-for="UserName" />
+				<div class="mb-3">
+					<label class="col-form-label">UserName</label>
+					<input type="text" id="username" class="form-control" asp-for="UserName" required />
+					<span class="text-danger" asp-validation-for="UserName"></span>
+				</div>
 
-				<label class="col-form-label">Password</label>
-      			<input type="password" id="password" class="form-control" asp-for="Password" />
+				<div class="mb-3">
+					<label class="col-form-label">Password</label>
+      				<input type="password" id="password" class="form-control" asp-for="Password" required minlength="6"/>
+					<span class="text-danger" asp-validation-for="Password"></span>
+				</div>
 
 			</div>
 
