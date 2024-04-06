@@ -56,10 +56,10 @@ namespace Bloggie.Web.Controllers
         [HttpGet]
         [ActionName("List")]
 
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(string? searchQuery)
         {
-
-            var tags =await tagRepository.GetAllAsync();
+            ViewBag.SearchQuery = searchQuery;
+            var tags =await tagRepository.GetAllAsync(searchQuery);
 
 
             return View(tags);
