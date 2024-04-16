@@ -101,7 +101,7 @@ namespace Bloggie.Web.Controllers
 
             //Retrive the result from the repository
             var blogPost=await blogPostRepository.GetAsync(id);
-            var tagsDomainModel = await tagRepository.GetAllAsync();
+            var tagsDomainModel = await tagRepository.GetAllTagsAsync();
 
             if (blogPost!=null)
             {
