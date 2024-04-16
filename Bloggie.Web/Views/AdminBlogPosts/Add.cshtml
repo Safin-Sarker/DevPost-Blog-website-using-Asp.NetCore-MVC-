@@ -78,12 +78,11 @@
         </div>
 
         <div class="mb-3">
-
             <label class="form-label">Tags</label>
-            <select class="form-select" asp-items="@Model.Tags" asp-for="SelectedTags">
-
+            <select class="form-select"
+                    asp-items="@Model.Tags"
+                    asp-for="SelectedTags">
             </select>
-
         </div>
 
 
@@ -122,7 +121,7 @@
             await fetch ('/api/images',{
                 method:'POST',
                 headers:{
-                    'Accept':'*/*'
+                    'Aceept':'*/*'
                 },
                 body:data
             }).then(response=> response.json())

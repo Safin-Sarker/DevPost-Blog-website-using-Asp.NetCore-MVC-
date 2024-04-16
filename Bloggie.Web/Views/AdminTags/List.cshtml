@@ -1,6 +1,7 @@
 ﻿@model List<Bloggie.Web.Models.Domain.Tag>
 
 @{
+    
 }
 
 <div class="bg-secondary bg-opacity-10 py-2">
@@ -38,8 +39,38 @@
             <thead>
                 <tr>
                     <th> Id</th>
-                    <th> Name</th>
-                    <th>Display Name</th>
+                    <th> 
+                     Name
+                         <span>
+                             <span>
+                                <a class="btn btn-light" asp-controller="AdminTags" asp-action="List" asp-route-sortBy="Name" asp-route-sortDirection="Asc" asp-route-searchQuery="@ViewBag.SearchQuery">                                    <i class="bi bi-arrow-up"></i>
+                                 </a>
+                             </span>
+
+                            <span>
+                                <a class="btn btn-light" asp-controller="AdminTags" asp-action="List" asp-route-sortBy="Name" asp-route-sortDirection="Desc" asp-route-searchQuery="@ViewBag.SearchQuery">
+                                    <i class="bi bi-arrow-down"></i>
+                                </a>
+                            </span>
+                         </span>
+
+                     </th>
+                    <th>
+                        Display Name
+                        <span>
+                            <span>
+                                <a class="btn btn-light" asp-controller="AdminTags" asp-action="List" asp-route-sortBy="DisplayName" asp-route-sortDirection="Asc" asp-route-searchQuery="@ViewBag.SearchQuery">
+                                    <i class="bi bi-arrow-up"></i>
+                                </a>
+                            </span>
+
+                            <span>
+                                <a class="btn btn-light" asp-controller="AdminTags" asp-action="List" asp-route-sortBy="DisplayName" asp-route-sortDirection="Desc" asp-route-searchQuery="@ViewBag.SearchQuery">
+                                    <i class="bi bi-arrow-down"></i>
+                                </a>
+                            </span>
+                        </span>
+                    </th>
                     <th> </th>
                     
                 </tr>
@@ -61,6 +92,25 @@
             </tbody>
 
         </table>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+                @for(int i=1;i<=ViewBag.TotalPages;i++)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="AdminTags" asp-action="List" asp-route-pageNumber="@i" asp-route-pageSize="@ViewBag.PageSize">
+                            @i
+
+                        </a>
+                     </li>
+                    
+                }
+
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
 
     }
     else

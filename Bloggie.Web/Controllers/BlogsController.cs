@@ -3,6 +3,7 @@ using Bloggie.Web.Models.ViewModels;
 using Bloggie.Web.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Bloggie.Web.Controllers
 {
@@ -58,23 +59,33 @@ namespace Bloggie.Web.Controllers
 
                 var blogCommentsForView= new List<BlogCommentView>();
 
-                foreach(var comment in blogComentsDomainModel)
+                foreach (var blogComment in blogComentsDomainModel)
                 {
-                    blogCommentsForView.Add(new BlogCommentView
+                    try
                     {
+                        var user = await userManager.FindByIdAsync(blogComment.UserId.ToString());
+                        string userName = user != null ? user.UserName : "Unknown"; // If user is null, set username as "Unknown"
 
-                        Description = comment.Description,
+                        blogCommentsForView.Add(new BlogCommentView
+                        {
+                            Description = blogComment.Description,
+                            AddDate = blogComment.DateAdded,
+                            UserName = userName
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                      
 
-						AddDate = comment.DateAdded,
-
-                        UserName=(await userManager.FindByIdAsync(comment.UserId.ToString())).UserName
-
-
-                    }) ; 
-
-
+                       
+                        blogCommentsForView.Add(new BlogCommentView
+                        {
+                            Description = blogComment.Description,
+                            AddDate = blogComment.DateAdded,
+                            UserName = "Unknown"
+                        });
+                    }
                 }
-
 
 
                 blogDetailsModel = new BlogDetailsView

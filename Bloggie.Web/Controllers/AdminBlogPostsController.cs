@@ -27,11 +27,11 @@ namespace Bloggie.Web.Controllers
 
             //get tags from repository
 
-            var tags= await tagRepository.GetAllAsync();
+            var tags= await tagRepository.GetAllTagsAsync();
 
             var mode = new AddBlogPostRequest
             {
-                Tags=tags.Select(X => new SelectListItem { Text=X.Name, Value= X.Id.ToString()  })
+                Tags=tags.Select(X => new SelectListItem { Text=X.Name, Value= X.Id.ToString() })
             };
 
 

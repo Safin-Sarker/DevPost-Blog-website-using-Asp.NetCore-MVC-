@@ -23,12 +23,9 @@ namespace Bloggie.Web.Models.ViewModels
         public bool Visible { get; set; }
 
 
-        //Display tags
-
+        // Display tags
         public IEnumerable<SelectListItem> Tags { get; set; }
-
-        //Collect Tag
-
+        // Collect Tag
         public string[] SelectedTags { get; set; } = Array.Empty<string>();
     }
 }
