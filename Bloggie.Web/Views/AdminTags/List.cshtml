@@ -1,6 +1,8 @@
 ﻿@model List<Bloggie.Web.Models.Domain.Tag>
 
 @{
+    int nextPage = Convert.ToInt32(ViewBag.PageNumber) + 1;
+    int previousPage = Convert.ToInt32(ViewBag.PageNumber) - 1;
     
 }
 
@@ -95,7 +97,11 @@
 
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item">
+                    <a class="page-link" asp-controller="AdminTags" asp-action="List" asp-route-pageNumber="@previousPage" asp-route-pageSize="@ViewBag.PageSize">
+                        Previous
+                    </a>
+                </li>
 
                 @for(int i=1;i<=ViewBag.TotalPages;i++)
                 {
@@ -108,7 +114,11 @@
                     
                 }
 
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li class="page-item">
+                    <a class="page-link" asp-controller="AdminTags" asp-action="List" asp-route-pageNumber="@nextPage" asp-route-pageSize="@ViewBag.PageSize">
+                    Next
+                    </a>
+                </li>
             </ul>
         </nav>
 
