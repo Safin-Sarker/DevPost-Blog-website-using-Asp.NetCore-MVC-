@@ -13,7 +13,7 @@ Dev Blog is an ASP.NET MVC project designed for creating and managing a developm
 - Admin can log in as Admin and User.
 - User can only log in as User.
 
-## Features (Implemented and Under Development)
+## Features (Implemented)
 1. **User Management:** SuperAdmin can create and manage both Admin and User accounts.
 2. **Blog Post Management:** SuperAdmin and Admin can create, update, and delete blog posts (CRUD operations).
 3. **Tag Management:** SuperAdmin and Admin can CRUD tags for organizing blog posts.
@@ -24,4 +24,4 @@ Dev Blog is an ASP.NET MVC project designed for creating and managing a developm
 8. **Entity Framework Core:** Uses EF Core for database operations.
 9. **Microsoft Identity:** Integrates Microsoft Identity for user authentication and authorization.
 10. **Validation:** Implements both client-side and server-side validation for user inputs.
-11. **Sorting and Pagination:** Under development to facilitate better organization and navigation within the blog.
+11. **Sorting and Pagination:**   facilitate better organization and navigation within the blog.
